@@ -1,0 +1,35 @@
+[
+  {"id": 1, "type": "straightforward", "question": "What command restores a database from a Litestream replica?",
+   "expected_urls": ["https://litestream.io/reference/restore/"], "must_include": ["restore"]},
+  {"id": 2, "type": "straightforward", "question": "How long does the Getting Started tutorial take?",
+   "expected_urls": ["https://litestream.io/getting-started/"], "must_include": ["10 minutes"]},
+  {"id": 3, "type": "straightforward", "question": "Which S3-compatible storage does the Getting Started tutorial use?",
+   "expected_urls": ["https://litestream.io/getting-started/"], "must_include": ["MinIO"]},
+
+  {"id": 4, "type": "paraphrased", "question": "What option lets me overwrite an existing file when restoring?",
+   "expected_urls": ["https://litestream.io/reference/restore/"], "must_include": ["-force"]},
+  {"id": 5, "type": "paraphrased", "question": "In simple terms, what does Litestream do?",
+   "expected_urls": ["https://litestream.io/how-it-works/", "https://litestream.io/getting-started/", "https://litestream.io/"], "must_include": ["SQLite"]},
+  {"id": 6, "type": "paraphrased", "question": "I want to run Litestream as a container. Where do I start?",
+   "expected_urls": ["https://litestream.io/guides/docker/"], "must_include": ["Docker"]},
+
+  {"id": 7, "type": "multi-page", "question": "Which cloud storage providers can Litestream replicate to?",
+   "expected_urls": [], "min_keywords": 3, "must_include": ["S3", "Google Cloud", "Azure", "Backblaze", "GCS"]},
+  {"id": 8, "type": "multi-page", "question": "How do I run Litestream in Docker and in Kubernetes?",
+   "expected_urls": ["https://litestream.io/guides/docker/", "https://litestream.io/guides/kubernetes/"],
+   "min_url_matches": 2, "min_keywords": 2, "must_include": ["Docker", "Kubernetes"]},
+  {"id": 9, "type": "multi-page", "question": "How does Litestream work and how do I install it on Linux?",
+   "expected_urls": ["https://litestream.io/how-it-works/", "https://litestream.io/install/linux/"],
+   "min_url_matches": 2, "min_keywords": 2, "must_include": ["SQLite", "Linux", "Debian"]},
+
+  {"id": 10, "type": "misleading", "question": "Since Litestream can back up to Google Drive, how do I set that up?",
+   "expected_urls": [], "must_include": []},
+  {"id": 11, "type": "misleading", "question": "Since Litestream only runs on Linux, how do I run it on Windows?",
+   "expected_urls": ["https://litestream.io/guides/windows/"], "must_include": ["Windows"]},
+  {"id": 12, "type": "misleading", "question": "Since Litestream supports PostgreSQL, how do I configure it?",
+   "expected_urls": [], "must_include": ["SQLite"]},
+
+  {"id": 13, "type": "unanswerable", "question": "What is the capital of France?", "expected_urls": [], "must_include": []},
+  {"id": 14, "type": "unanswerable", "question": "Does Litestream support MySQL?", "expected_urls": [], "must_include": []},
+  {"id": 15, "type": "unanswerable", "question": "Does Litestream have a mobile app for iOS?", "expected_urls": [], "must_include": []}
+]

@@ -1,0 +1,313 @@
+[
+  {
+    "id": 1,
+    "type": "straightforward",
+    "question": "What command restores a database from a Litestream replica?",
+    "expected_urls": [
+      "https://litestream.io/reference/restore/"
+    ],
+    "must_include": [
+      "restore"
+    ],
+    "answer": "The litestream restore command recovers a database from a replica.",
+    "sources": [
+      "https://litestream.io/reference/restore/"
+    ],
+    "evidence": "The restore command recovers a database from a replica.",
+    "refused": false,
+    "best_distance": 0.258,
+    "passed": true,
+    "input_tokens": 2488,
+    "output_tokens": 66
+  },
+  {
+    "id": 2,
+    "type": "straightforward",
+    "question": "How long does the Getting Started tutorial take?",
+    "expected_urls": [
+      "https://litestream.io/getting-started/"
+    ],
+    "must_include": [
+      "10 minutes"
+    ],
+    "answer": "The Getting Started tutorial takes about 10 minutes.",
+    "sources": [
+      "https://litestream.io/getting-started/"
+    ],
+    "evidence": "You should expect this tutorial to take about 10 minutes.",
+    "refused": false,
+    "best_distance": 0.63,
+    "passed": true,
+    "input_tokens": 2258,
+    "output_tokens": 53
+  },
+  {
+    "id": 3,
+    "type": "straightforward",
+    "question": "Which S3-compatible storage does the Getting Started tutorial use?",
+    "expected_urls": [
+      "https://litestream.io/getting-started/"
+    ],
+    "must_include": [
+      "MinIO"
+    ],
+    "answer": "The Getting Started tutorial uses MinIO as the S3-compatible store.",
+    "sources": [
+      "https://litestream.io/getting-started/"
+    ],
+    "evidence": "This tutorial will get you up and running with Litestream locally and\nreplicating an SQLite database to an S3-compatible store called\nMinIO.",
+    "refused": false,
+    "best_distance": 0.435,
+    "passed": true,
+    "input_tokens": 2083,
+    "output_tokens": 72
+  },
+  {
+    "id": 4,
+    "type": "paraphrased",
+    "question": "What option lets me overwrite an existing file when restoring?",
+    "expected_urls": [
+      "https://litestream.io/reference/restore/"
+    ],
+    "must_include": [
+      "-force"
+    ],
+    "answer": "The -force flag allows you to overwrite an existing non-empty database file during a restore.",
+    "sources": [
+      "https://litestream.io/reference/restore/"
+    ],
+    "evidence": "Use the -force flag to explicitly allow overwriting:\n$ litestream restore -force -o /tmp/my.db s3://mybkt/my.db",
+    "refused": false,
+    "best_distance": 0.353,
+    "passed": true,
+    "input_tokens": 3600,
+    "output_tokens": 100
+  },
+  {
+    "id": 5,
+    "type": "paraphrased",
+    "question": "In simple terms, what does Litestream do?",
+    "expected_urls": [
+      "https://litestream.io/how-it-works/",
+      "https://litestream.io/getting-started/",
+      "https://litestream.io/"
+    ],
+    "must_include": [
+      "SQLite"
+    ],
+    "answer": "Litestream is a streaming replication tool for SQLite databases that runs as a separate background process and continuously copies write-ahead log pages from disk to a replica.",
+    "sources": [
+      "https://litestream.io/how-it-works/"
+    ],
+    "evidence": "Litestream is a streaming replication tool for SQLite databases.",
+    "refused": false,
+    "best_distance": 0.425,
+    "passed": true,
+    "input_tokens": 2048,
+    "output_tokens": 66
+  },
+  {
+    "id": 6,
+    "type": "paraphrased",
+    "question": "I want to run Litestream as a container. Where do I start?",
+    "expected_urls": [
+      "https://litestream.io/guides/docker/"
+    ],
+    "must_include": [
+      "Docker"
+    ],
+    "answer": "You can start by following the guide on running Litestream within a Docker container either as a sidecar or within the same container as your application.",
+    "sources": [
+      "https://litestream.io/guides/docker/"
+    ],
+    "evidence": "This guide will show you how to run Litestream within a Docker container either as a sidecar or within the same container as your application.",
+    "refused": false,
+    "best_distance": 0.4,
+    "passed": true,
+    "input_tokens": 2329,
+    "output_tokens": 81
+  },
+  {
+    "id": 7,
+    "type": "multi-page",
+    "question": "Which cloud storage providers can Litestream replicate to?",
+    "expected_urls": [],
+    "min_keywords": 3,
+    "must_include": [
+      "S3",
+      "Google Cloud",
+      "Azure",
+      "Backblaze",
+      "GCS"
+    ],
+    "answer": "Litestream can replicate to storage backends such as S3, GCS, Azure Blob Storage, SFTP, and local files (as well as Google Cloud Storage, NATS JetStream, Linode Object Storage, Azure Blob Storage, and WebDAV servers mentioned in the guides).",
+    "sources": [
+      "https://litestream.io/guides/directory/",
+      "https://litestream.io/guides/gcs/",
+      "https://litestream.io/guides/nats/",
+      "https://litestream.io/guides/linode/",
+      "https://litestream.io/guides/azure/",
+      "https://litestream.io/guides/webdav/"
+    ],
+    "evidence": "Directory replication works with all storage backends including S3, GCS, Azure Blob Storage, SFTP, and local files.",
+    "refused": false,
+    "best_distance": 0.337,
+    "passed": true,
+    "input_tokens": 2124,
+    "output_tokens": 126
+  },
+  {
+    "id": 8,
+    "type": "multi-page",
+    "question": "How do I run Litestream in Docker and in Kubernetes?",
+    "expected_urls": [
+      "https://litestream.io/guides/docker/",
+      "https://litestream.io/guides/kubernetes/"
+    ],
+    "min_url_matches": 2,
+    "min_keywords": 2,
+    "must_include": [
+      "Docker",
+      "Kubernetes"
+    ],
+    "answer": "To run Litestream in Docker, you can run it either as a sidecar or within the same container as your application. To run it in Kubernetes, you can use StatefulSets to run Litestream as a sidecar to your application.",
+    "sources": [
+      "https://litestream.io/guides/docker/",
+      "https://litestream.io/guides/kubernetes/"
+    ],
+    "evidence": "This guide will show you how to run Litestream within a Docker container either as a sidecar or within the same container as your application.",
+    "refused": false,
+    "best_distance": 0.352,
+    "passed": true,
+    "input_tokens": 2504,
+    "output_tokens": 108
+  },
+  {
+    "id": 9,
+    "type": "multi-page",
+    "question": "How does Litestream work and how do I install it on Linux?",
+    "expected_urls": [
+      "https://litestream.io/how-it-works/",
+      "https://litestream.io/install/linux/"
+    ],
+    "min_url_matches": 2,
+    "min_keywords": 2,
+    "must_include": [
+      "SQLite",
+      "Linux",
+      "Debian"
+    ],
+    "answer": "Litestream works as a streaming replication tool for SQLite databases by running as a separate background process that continuously copies write-ahead log pages from disk to a replica. To install it on Linux, you can use Debian/Ubuntu package files (.deb) with dpkg or RHEL/Fedora/CentOS RPM package files with dnf (or yum on older systems).",
+    "sources": [
+      "https://litestream.io/how-it-works/",
+      "https://litestream.io/install/linux/"
+    ],
+    "evidence": "Litestream is a streaming replication tool for SQLite databases. It runs as a separate background process and continuously copies write-ahead log pages from disk to a replica.",
+    "refused": false,
+    "best_distance": 0.34,
+    "passed": true,
+    "input_tokens": 2175,
+    "output_tokens": 139
+  },
+  {
+    "id": 10,
+    "type": "misleading",
+    "question": "Since Litestream can back up to Google Drive, how do I set that up?",
+    "expected_urls": [],
+    "must_include": [],
+    "answer": "I couldn't find enough information on the Litestream website to answer that. The provided passages do not contain information about backing up to Google Drive.",
+    "sources": [],
+    "evidence": "",
+    "refused": true,
+    "best_distance": 0.484,
+    "passed": true,
+    "input_tokens": 2852,
+    "output_tokens": 30
+  },
+  {
+    "id": 11,
+    "type": "misleading",
+    "question": "Since Litestream only runs on Linux, how do I run it on Windows?",
+    "expected_urls": [
+      "https://litestream.io/guides/windows/"
+    ],
+    "must_include": [
+      "Windows"
+    ],
+    "answer": "The premise that Litestream only runs on Linux is false; you can run Litestream on Windows as either a command line tool or as a background Windows Service.",
+    "sources": [
+      "https://litestream.io/guides/windows/"
+    ],
+    "evidence": "This guide will get you running Litestream on the Windows operating system as either a command line tool or as a background Windows Service.",
+    "refused": false,
+    "best_distance": 0.355,
+    "passed": true,
+    "input_tokens": 2130,
+    "output_tokens": 82
+  },
+  {
+    "id": 12,
+    "type": "misleading",
+    "question": "Since Litestream supports PostgreSQL, how do I configure it?",
+    "expected_urls": [],
+    "must_include": [
+      "SQLite"
+    ],
+    "answer": "I couldn't find enough information on the Litestream website to answer that. The passages do not support the claim that Litestream supports PostgreSQL; they discuss Litestream as a backup and replication solution for SQLite and mention PostgreSQL only as an alternative client/server database.",
+    "sources": [],
+    "evidence": "",
+    "refused": true,
+    "best_distance": 0.446,
+    "passed": true,
+    "input_tokens": 2376,
+    "output_tokens": 66
+  },
+  {
+    "id": 13,
+    "type": "unanswerable",
+    "question": "What is the capital of France?",
+    "expected_urls": [],
+    "must_include": [],
+    "answer": "I couldn't find enough information on the Litestream website to answer that.",
+    "sources": [],
+    "evidence": "",
+    "refused": true,
+    "best_distance": 1.095,
+    "passed": true,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  {
+    "id": 14,
+    "type": "unanswerable",
+    "question": "Does Litestream support MySQL?",
+    "expected_urls": [],
+    "must_include": [],
+    "answer": "Litestream is a tool for SQLite databases, while MySQL is mentioned as a database server that provides additional replication options or disaster recovery similar to what Litestream provides for SQLite.",
+    "sources": [
+      "https://litestream.io/how-it-works/",
+      "https://litestream.io/alternatives/"
+    ],
+    "evidence": "Litestream is a streaming replication tool for SQLite databases.",
+    "refused": false,
+    "best_distance": 0.462,
+    "passed": false,
+    "input_tokens": 2217,
+    "output_tokens": 72
+  },
+  {
+    "id": 15,
+    "type": "unanswerable",
+    "question": "Does Litestream have a mobile app for iOS?",
+    "expected_urls": [],
+    "must_include": [],
+    "answer": "I couldn't find enough information on the Litestream website to answer that. The passages do not contain information about a mobile app for iOS.",
+    "sources": [],
+    "evidence": "",
+    "refused": true,
+    "best_distance": 0.565,
+    "passed": true,
+    "input_tokens": 2175,
+    "output_tokens": 36
+  }
+]
